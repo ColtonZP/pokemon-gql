@@ -1,18 +1,10 @@
-import { useQuery } from '@apollo/client';
-import { POKEMON_QUERY } from '../GraphQL/Queries';
+export const Pokedex = ({ pokemon }) => {
+  const pages = [];
 
-export const Pokedex = () => {
-  const { data, error, loading } = useQuery(POKEMON_QUERY);
-  if (error) return <div>errors</div>;
-  if (loading || !data) return <div>loading</div>;
+  for (let i = 0; i < pokemon.length; i += 10) {
+    const chunk = pokemon.slice(i, i + 10);
+    pages.push(chunk);
+  }
 
-  return (
-    <div>
-      {loading ? (
-        <div>loading</div>
-      ) : (
-        data.pokemons.map(pokemon => <h1 key={pokemon.id}>{pokemon.name}</h1>)
-      )}
-    </div>
-  );
+  return <div></div>;
 };
