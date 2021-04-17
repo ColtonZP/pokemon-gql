@@ -8,7 +8,7 @@ import { POKEMON_QUERY } from '../GraphQL/Queries';
 import { Login } from '../components/Login';
 
 export default function Home({ pokemon }) {
-  const { user, changeUser, isLoggedIn } = useContext(StateContext);
+  const { changeUser, isLoggedIn } = useContext(StateContext);
   return (
     <div>
       <Head>
@@ -17,7 +17,6 @@ export default function Home({ pokemon }) {
       </Head>
 
       <main>
-        <h1>Pokedex</h1>
         {!isLoggedIn ? (
           <Login changeUser={changeUser} />
         ) : (

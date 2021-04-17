@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState } from 'react';
 
 export const Login = ({ changeUser }) => {
   const [user, updateUser] = useState('');
@@ -12,7 +12,7 @@ export const Login = ({ changeUser }) => {
   };
 
   return (
-    <div>
+    <div className="login">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -24,7 +24,7 @@ export const Login = ({ changeUser }) => {
           value={password}
           onChange={e => updatePassword(e.target.value)}
         />
-        <button>Login</button>
+        <input type="submit" value="Login" />
       </form>
     </div>
   );

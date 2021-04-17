@@ -1,0 +1,42 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background: #1c1d1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & form {
+    display: block;
+    background: #2d2f36;
+    border-radius: 8px;
+    width: 60%;
+    padding: 5rem;
+    max-width: 508px;
+
+    & input {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      margin: 3rem 0;
+      background-color: #3f414b;
+      border-radius: 6px;
+      border: solid 1px transparent;
+      padding: 0.5em;
+      outline: none;
+      color: white;
+      line-height: 25px;
+
+      &:focus {
+        border-color: var(--theme);
+      }
+    }
+
+    & input[type='submit'] {
+      background: var(--theme);
+      margin-top: 4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
