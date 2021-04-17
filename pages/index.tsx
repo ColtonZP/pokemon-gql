@@ -1,6 +1,10 @@
-import Head from 'next/head';
 import { useContext } from 'react';
+import { ApolloProvider } from '@apollo/client';
+import Head from 'next/head';
+
 import { StateContext } from '../components/Context';
+import { Pokedex } from '../components/Pokedex';
+import { client } from './api/apollo-client';
 
 export default function Home() {
   const { user, changeUser, isLoggedIn } = useContext(StateContext);
@@ -16,7 +20,9 @@ export default function Home() {
         {!isLoggedIn ? (
           <button onClick={() => changeUser('admin', true)}>Log In</button>
         ) : (
-          <h1>{user}</h1>
+          <ApolloProvider client={client}>
+            <Pokedex />
+          </ApolloProvider>
         )}
       </main>
     </div>
