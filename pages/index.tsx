@@ -5,6 +5,7 @@ import { StateContext } from '../components/Context';
 import { Pokedex } from '../components/Pokedex';
 import { client } from './api/apollo-client';
 import { POKEMON_QUERY } from '../GraphQL/Queries';
+import { Login } from '../components/Login';
 
 export default function Home({ pokemon }) {
   const { user, changeUser, isLoggedIn } = useContext(StateContext);
@@ -18,7 +19,7 @@ export default function Home({ pokemon }) {
       <main>
         <h1>Pokedex</h1>
         {!isLoggedIn ? (
-          <button onClick={() => changeUser('admin', true)}>Log In</button>
+          <Login changeUser={changeUser} />
         ) : (
           <Pokedex pokemon={pokemon} />
         )}
