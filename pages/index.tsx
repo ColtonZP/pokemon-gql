@@ -17,7 +17,7 @@ export default function Home({ pokemon }) {
 
       <main>
         <h1>Pokedex</h1>
-        {isLoggedIn ? (
+        {!isLoggedIn ? (
           <button onClick={() => changeUser('admin', true)}>Log In</button>
         ) : (
           <Pokedex pokemon={pokemon} />
