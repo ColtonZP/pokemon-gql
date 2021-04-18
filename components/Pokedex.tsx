@@ -136,19 +136,23 @@ export const Pokedex = ({ pokemon }) => {
               <span>{`${currentPokemon.height.minimum} - ${currentPokemon.height.maximum}`}</span>
             </p>
 
-            <p>
-              Evolution:{' '}
-              {currentPokemon.evolutions.map(evo => (
-                <span className="tag" key="type">
-                  {evo.name}
-                </span>
-              ))}
-            </p>
+            {currentPokemon.evolutions && (
+              <>
+                <p>
+                  Evolution:{' '}
+                  {currentPokemon.evolutions.map(evo => (
+                    <span className="tag" key="type">
+                      {evo.name}
+                    </span>
+                  ))}
+                </p>
 
-            <p>
-              Evolution Requirements:{' '}
-              <span>{`${currentPokemon.evolutionRequirements.amount} ${currentPokemon.evolutionRequirements.name}`}</span>
-            </p>
+                <p>
+                  Evolution Requirements:{' '}
+                  <span>{`${currentPokemon.evolutionRequirements.amount} ${currentPokemon.evolutionRequirements.name}`}</span>
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
