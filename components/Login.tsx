@@ -12,7 +12,7 @@ export const Login = ({ changeUser }) => {
   };
 
   return (
-    <div className="login">
+    <div className="login page">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -8,6 +8,32 @@ export const POKEMON_QUERY = gql`
       name
       image
       classification
+      types
+      resistant
+      attacks {
+        fast {
+          name
+          type
+          damage
+        }
+        special {
+          name
+          type
+          damage
+        }
+      }
+      weaknesses
+      fleeRate
+      maxCP
+      maxHP
+      evolutions {
+        name
+      }
+      evolutionRequirements {
+        name
+        amount
+      }
+
       weight {
         minimum
         maximum

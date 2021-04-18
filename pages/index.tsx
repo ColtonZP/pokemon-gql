@@ -17,7 +17,7 @@ export default function Home({ pokemon }) {
       </Head>
 
       <main>
-        {!isLoggedIn ? (
+        {isLoggedIn ? (
           <Login changeUser={changeUser} />
         ) : (
           <Pokedex pokemon={pokemon} />
