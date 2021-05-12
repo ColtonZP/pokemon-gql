@@ -8,7 +8,7 @@ export default function Home({ pokemon }) {
   return (
     <div>
       <Head>
-        <title>Front-end Challenge</title>
+        <title>Pokedex</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
