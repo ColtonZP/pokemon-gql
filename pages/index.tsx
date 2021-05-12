@@ -1,14 +1,10 @@
-import { useContext } from 'react';
 import Head from 'next/head';
 
-import { StateContext } from '../components/Context';
 import { Pokedex } from '../components/Pokedex';
 import { client } from './api/apollo-client';
 import { POKEMON_QUERY } from '../GraphQL/Queries';
-import { Login } from '../components/Login';
 
 export default function Home({ pokemon }) {
-  const { changeUser, isLoggedIn } = useContext(StateContext);
   return (
     <div>
       <Head>
@@ -17,11 +13,7 @@ export default function Home({ pokemon }) {
       </Head>
 
       <main>
-        {!isLoggedIn ? (
-          <Login changeUser={changeUser} />
-        ) : (
-          <Pokedex pokemon={pokemon} />
-        )}
+        <Pokedex pokemon={pokemon} />
       </main>
     </div>
   );
