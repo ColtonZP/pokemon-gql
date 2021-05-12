@@ -1,1 +1,1 @@
-## Hosted [pokemon-gql.vercel.app](https://pokemon-gql.vercel.app)
+## Hosted [pokemon-gql.vercel.app](https://colton-pokemon-gql.vercel.app)
